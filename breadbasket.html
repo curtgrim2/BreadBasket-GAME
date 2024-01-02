@@ -1,0 +1,131 @@
+<!DOCTYPE>
+<html>
+<head>
+  <title>
+    Bread Basket!
+  </title>
+  <style>
+#gamescreen,#settings{
+  display:none;
+}
+
+#startscreen{
+  /*display:flex;
+  justify-content:center;
+  align-items:center;*/
+
+  position: relative;
+  top:30%;
+
+  text-align:center;
+  background-color: grey;
+}
+
+h1{
+  text-align:center;
+}
+
+#startnav{
+  text-align:center;
+  background-color: red;
+}
+
+#startnav .start_spans:hover{
+  cursor:pointer;
+  text-decoration: underline;
+}
+
+.start_spans{
+  margin:0 10%;
+}
+#settings{
+  background-color: lightgrey;
+  width:70%;
+  margin:0 auto 0 auto;
+  padding-bottom:2%;
+}
+
+#close1{
+  position: relative;
+ left:93%;
+  text-align: center;
+  background-color: red;
+  color:white;
+  width:5%;
+  padding:1% 1%;
+}
+
+#close1:hover{
+  box-shadow: 0px 0px 3px 5px red; /*What is the order of the last two?*/
+  cursor:pointer;
+}
+
+  </style>
+</head>
+<body>
+<div id="startscreen">
+<h1>Bread_Basket </h1>
+
+<!-- <img/> -->
+
+<div id="startnav">
+<span id="go2settings" class="start_spans">Settings</span>
+<span id="startbutton" class="start_spans">Click here to begin</span>
+<span class="start_spans">How to Play</span>
+</div>
+</div>
+
+
+<div id="settings">
+<div id="close1"> X </div>
+<h2 align="center"> Settings </h2>
+
+<br>
+<div>SFX Volume</div>
+
+<span>Language</span>
+<ul>
+<li>English</li>
+<li>Spanish</li>
+</ul>
+</div>
+
+
+<!--Game Screen -->
+
+<div id="gamescreen">
+
+TESTING TESTING
+</div>
+
+<script>
+var userstarted = document.getElementById("startbutton");
+var settingsclicked = document.getElementById("go2settings");
+var close1clicked = document.getElementById("close1");
+
+userstarted.onclick = function(){startthegame()};
+settingsclicked.onclick = function(){opensettings()};
+close1clicked.onclick = function(){closesetting()};
+
+function startthegame(){
+  document.getElementById("startscreen").style.display ="none";
+  document.getElementById("gamescreen").style.display ="block";
+  document.getElementById("settings").style.display="none"; //JUST in case
+}
+
+function opensettings(){
+document.getElementById("settings").style.display = "block";
+document.getElementById("gamescreen").style.display ="none";
+document.getElementById("startscreen").style.display ="none";
+}
+
+function closesetting(){
+  document.getElementById("settings").style.display="none";
+  document.getElementById("startscreen").style.display ="block";
+}
+
+</script>
+
+
+</body>
+</html>
